@@ -19,12 +19,12 @@ interface Values {
 const CourseOutline = ({ outline }: { outline: Outline }) => {
   const outlines = outline.values;
 
-  console.log(outlines);
+  
 
   return (
     <div>
       <h2 className="mb-4 text-xl font-semibold md:text-2xl">{outline.name}</h2>
-      <div className="rounded-md md:border ">
+      <div className="rounded-md md:border border-gray-300">
         <div className="pt-2 md:p-6">
           <ul className="grid grid-cols-1 gap-2 md:grid-cols-[1fr_1fr] md:gap-4">
             {outlines.map((item) => (
