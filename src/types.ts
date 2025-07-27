@@ -17,6 +17,22 @@ export interface Data {
   delivery_method: string;
 }
 
+export interface Features {
+  features: string;
+  name: string;
+  description?: string;
+  bg_color?: string;
+  order_idx: number;
+  values: Values[];
+}
+
+export interface Values{
+icon:string;
+id:string;
+subtitle:string;
+title:string
+}
+
 interface Media {
   name: string;
   resource_type: string;
@@ -76,7 +92,7 @@ interface Offer {
   text: string;
 }
 
-interface Instructor {
+export interface Instructor {
   description: string;
   has_instructor_page: boolean;
   image: string;

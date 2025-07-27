@@ -1,5 +1,7 @@
 import CourseTitle from "@/components/CourseTitle/CourseTitle";
-import Instructor from "@/components/CourseTitle/Instructor/Instructor";
+import Instructor from "@/components/Instructor/Instructor";
+import Features from "@/components/Features/Features";
+import CourseOutline from "@/components/CourseOutline/CourseOutline";
 
 
 const Product = async () => {
@@ -14,8 +16,15 @@ const Product = async () => {
     }
   );
   const course = await res.json();
-  // console.log(course);
+ 
   const instructor = (course?.data?.sections[2]?.values[0])
+
+  const features = course?.data?.sections[3];
+
+  const outline = course?.data?.sections[5];
+
+ console.log(outline)
+  
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -28,6 +37,12 @@ const Product = async () => {
           />
 
           <Instructor instructor={instructor} />
+
+          <Features features={features}/>
+
+          <CourseOutline outline={outline} />
+
+          
         </div>
         
 
