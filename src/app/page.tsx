@@ -20,8 +20,6 @@ const Product = async () => {
   );
   const course = await res.json();
 
-  
-
   const instructor = course?.data?.sections[2]?.values[0];
 
   const features = course?.data?.sections[3];
@@ -32,10 +30,9 @@ const Product = async () => {
 
   const courseDetails = course?.data?.sections[7];
 
-  const checklists = course?.data?.checklist
+  const checklists = course?.data?.checklist;
 
-  // const trailer = course?.data?.media
- 
+  
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
@@ -59,15 +56,15 @@ const Product = async () => {
         </div>
 
         {/* right side */}
-        <div>
+        <div className="w-[400px]">
           <Trailer />
           <div>
             <button className="bg-green-600 text-white w-full py-3 border-b-3 border-green-800 rounded-lg">
               {course?.data?.cta_text?.name}
             </button>
           </div>
-<Checklist checklists= {checklists}/>
 
+          <Checklist checklists={checklists} />
         </div>
       </div>
     </div>
